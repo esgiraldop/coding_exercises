@@ -1,0 +1,10 @@
+venv 
+.idea 
+__init__.py
+__pycache__
+data_for_testing
+.ipynb_checkpoints
+*.s3db
+*.csv
+*.xlsx
+*.pdf
