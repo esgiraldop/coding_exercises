@@ -22,23 +22,37 @@ class Solution:
             current = current.next
 
     def removeDuplicates(self,head):
-        #Write your code here
         current = head
-        if head.next == None:
-            return head
-        else:
-            if head.data == head.next.data:
-                current.next = current.next.next
-                return self.removeDuplicates(head.next.next)
-            else:
-                return self.removeDuplicates(head.next)
-            return head
+        values = []
+        next_current = current.next
+        values.append(current.data)
+        while next_current != None:
+            while current.data == next_current.data:
+                next_current = next_current.next
+                if next_current == None:
+                    break
+            if next_current == None:
+                break
+            values.append(next_current.data)
+            current = next_current
+            next_current = current.next
+
+        if current.data != values[-1]:
+            values.append(current.data)
+
+        head = None
+        for value in values:
+            head = self.insert(head, value)
+
+        return head
 
 mylist= Solution()
 #T=int(input())
-T = 6
+#T = 6
+#T = 7
 head=None
-data_list = [1, 2, 2, 3, 3, 4]
+#data_list = [1, 2, 2, 3, 3, 4]
+data_list = [1, 1, 1, 1, 1, 1, 1]
 #for i in range(T):
 for data in data_list:
     #data=int(input())

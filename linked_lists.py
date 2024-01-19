@@ -20,9 +20,12 @@ class Solution:
         return head
 
 mylist= Solution()
-T=int(input())
+#T=int(input())
+T = 4
+values = [2, 3, 4, 1]
 head=None
-for i in range(T):
-    data=int(input())
+#for i in range(T):
+for data in values:
+    #data=int(input())
     head=mylist.insert(head,data)
 mylist.display(head)
