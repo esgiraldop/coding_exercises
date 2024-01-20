@@ -2,7 +2,7 @@ from anio_bisiesto import is_anio_bisiesto
 
 def iter_days(fecha1, fecha2):
     dias = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    numDias = 1
+    numDias = 0
     for anio in range(fecha1[2],fecha2[2]+1):
         if is_anio_bisiesto(anio):
             dias[1] = 29
